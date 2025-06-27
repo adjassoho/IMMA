@@ -38,22 +38,6 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 60, scale: 0.92, filter: 'blur(16px)', boxShadow: '0 0 0 0 #FFA72600' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    filter: 'blur(0px)',
-    boxShadow: '0 8px 32px #FFA72622',
-    transition: {
-      duration: 0.55,
-      type: 'spring',
-      bounce: 0.22,
-    },
-  },
-};
-
 const Services: React.FC = () => {
   return (
     <motion.section

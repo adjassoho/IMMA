@@ -95,39 +95,4 @@ const Hero: React.FC = () => {
   );
 };
 
-const AnimatedParagraph: React.FC = () => {
-  const text = "Notre IA parcourt des milliers d'annonces et organise les visites pour vous. Concentrez-vous sur l'essentiel : votre futur chez-vous.";
-  const words = text.split(' ');
-  return (
-    <motion.p
-      className="text-base sm:text-lg md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow font-semibold font-[Poppins,sans-serif] text-white/90 animate-glow"
-      initial="hidden"
-      animate="visible"
-      variants={{
-        hidden: {},
-        visible: {
-          transition: {
-            staggerChildren: 0.07,
-          },
-        },
-      }}
-      style={{ letterSpacing: '0.01em' }}
-    >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          variants={{
-            hidden: { opacity: 0, y: 10 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          transition={{ duration: 0.4 }}
-          className="inline-block mx-0.5"
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.p>
-  );
-};
-
 export default Hero;

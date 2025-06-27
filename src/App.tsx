@@ -4,8 +4,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import HowItWorks from './components/HowItWorks';
 import WhatsNew from './components/WhatsNew';
-import Services from './components/Services';
-import VerticalCarousel from './components/VerticalCarousel';
 import React, { useState } from 'react';
 import { FaStar, FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -290,38 +288,6 @@ function Footer() {
 }
 
 function App() {
-  // Exemple de données pour le carousel (à remplacer par des vraies données si besoin)
-  const carouselItems = [
-    (
-      <div className="flex flex-col items-center text-center">
-        <img src="/public/images/step1.webp" alt="Service 1" className="w-24 h-24 rounded-full mb-4 object-cover shadow" />
-        <h3 className="text-xl font-bold text-primary mb-2">Recherche automatisée</h3>
-        <p className="text-primary/80">Notre technologie scanne toutes les annonces pour vous.</p>
-      </div>
-    ),
-    (
-      <div className="flex flex-col items-center text-center">
-        <img src="/public/images/step2.webp" alt="Service 2" className="w-24 h-24 rounded-full mb-4 object-cover shadow" />
-        <h3 className="text-xl font-bold text-primary mb-2">Organisation des visites</h3>
-        <p className="text-primary/80">Nous planifions vos visites selon vos disponibilités.</p>
-      </div>
-    ),
-    (
-      <div className="flex flex-col items-center text-center">
-        <img src="/public/images/step3.png" alt="Service 3" className="w-24 h-24 rounded-full mb-4 object-cover shadow" />
-        <h3 className="text-xl font-bold text-primary mb-2">Tableau de bord</h3>
-        <p className="text-primary/80">Suivez l'avancement de votre projet en temps réel.</p>
-      </div>
-    ),
-    (
-      <div className="flex flex-col items-center text-center">
-        <img src="/public/images/step4.png" alt="Service 4" className="w-24 h-24 rounded-full mb-4 object-cover shadow" />
-        <h3 className="text-xl font-bold text-primary mb-2">Accompagnement humain</h3>
-        <p className="text-primary/80">Un expert dédié vous accompagne à chaque étape.</p>
-      </div>
-    ),
-  ];
-
   return (
     <>
       <Navbar />
