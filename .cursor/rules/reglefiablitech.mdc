@@ -1,0 +1,10 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+1-chaque fois que je te demanderer des faire une modification assure-toi de le mettre directement dans le code
+2-le design dois s'inspirer de celui du site https://www.oxia.fr/
+3- nous sommes entrain de developper avec react et typeScript donc fais attention aux syntaxe
+
+4- nous allons revoire le design actuel du site pour adapter la couleur principale à une couleur cendre comme couleur principal et légerement la couleur orange comme couleur secondaire
