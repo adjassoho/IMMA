@@ -31,7 +31,7 @@ const faqData = [
 function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section className="w-full py-20 px-2 sm:px-8 bg-primary/5 flex flex-col items-center justify-center">
+    <section className="w-full py-20 px-2 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex flex-col items-center justify-center">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary uppercase tracking-wide">
         FAQ
       </h2>
@@ -135,11 +135,26 @@ function Testimonials() {
   const items = testimonials.slice(current, current + count);
 
   return (
-    <section className="w-full py-20 px-2 sm:px-8 bg-primary/5 flex flex-col items-center justify-center">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary uppercase tracking-wide">
+    <section className="w-full py-20 px-2 sm:px-8 relative flex flex-col items-center justify-center overflow-hidden" style={{position: 'relative'}}>
+      {/* Image d'arrière-plan animée */}
+      <motion.div
+        initial={{ scale: 1 }}
+        animate={{ scale: 1.08 }}
+        transition={{ duration: 18, repeat: Infinity, repeatType: 'reverse', ease: 'easeInOut' }}
+        className="absolute inset-0 w-full h-full z-0"
+        style={{
+          backgroundImage: "url('/images/temoignage.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      {/* Overlay sombre pour lisibilité */}
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm pointer-events-none z-10" />
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-white uppercase tracking-wide relative z-20">
         Témoignages
       </h2>
-      <div className="w-full max-w-6xl flex flex-col items-center px-2 sm:px-8">
+      <div className="w-full max-w-6xl flex flex-col items-center px-2 sm:px-8 relative z-20">
         <div className="flex items-center justify-center mb-6">
           <button
             onClick={() => handleManualNav(handlePrev)}
@@ -194,7 +209,7 @@ function Testimonials() {
 
 function Contact() {
   return (
-    <section className="w-full py-20 px-2 sm:px-8 bg-primary/5 flex flex-col items-center justify-center">
+    <section className="w-full py-20 px-2 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex flex-col items-center justify-center">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary uppercase tracking-wide">
         Contact
       </h2>

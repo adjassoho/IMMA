@@ -45,10 +45,12 @@ const Services: React.FC = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={containerVariants}
-      className="w-full py-24 px-2 sm:px-8 bg-white flex flex-col items-center justify-center"
+      className="w-full py-24 px-2 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative flex flex-col items-center justify-center overflow-hidden"
     >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-secondary uppercase tracking-wide">Nos services</h2>
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10">
+      {/* Overlay de texture subtile */}
+      <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'40\' height=\'40\' fill=\'%23e5e7eb\'/%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1.5\' fill=\'%23d1d5db\'/%3E%3C/svg%3E")', opacity: 0.18}} />
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-secondary uppercase tracking-wide relative z-10">Nos services</h2>
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
         {services.map((service, idx) => (
           <motion.div
             key={idx}
