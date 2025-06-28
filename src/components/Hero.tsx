@@ -7,7 +7,7 @@ const particles = Array.from({ length: 18 });
 const Hero: React.FC = () => {
   return (
     <section
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden z-0 bg-primary"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden z-0 bg-primary rounded-b-[32px] sm:rounded-b-[60px] md:rounded-b-[100px]"
     >
       {/* Image d'arrière-plan animée */}
       <motion.div
@@ -43,12 +43,12 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-primary/80 z-10" />
 
       {/* Texte animé */}
-      <div className="relative z-30 w-full flex flex-col items-center justify-center text-center text-white px-4 py-16">
+      <div className="relative z-30 w-full flex flex-col items-center justify-center text-center text-white px-2 sm:px-4 py-10 sm:py-16">
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-3xl sm:text-5xl md:text-7xl font-extrabold mb-4 drop-shadow-lg"
+          className="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg"
         >
           Trouvez votre{' '}
           <motion.span
@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.7 }}
-          className="text-base sm:text-lg md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow font-semibold font-[Poppins,sans-serif] text-white/90"
+          className="text-sm sm:text-lg md:text-2xl mb-6 sm:mb-8 max-w-xl sm:max-w-2xl mx-auto drop-shadow font-semibold font-[Poppins,sans-serif] text-white/90"
         >
           Notre <span className="relative px-1 animate-agent-highlight font-bold text-secondary">agent
             <span className="absolute left-0 top-1/2 w-full h-2 bg-secondary/30 rounded-full blur-md -z-10 animate-agent-shine" style={{transform: 'translateY(-50%)'}}></span>
@@ -79,13 +79,13 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 1 }}
-          className="flex justify-center"
+          className="flex justify-center w-full"
         >
           <motion.button
             whileHover={{ scale: 1.08, boxShadow: '0 0 0 8px #FFA72644' }}
             animate={{ scale: [1, 1.04, 1], boxShadow: ['0 0 0 0 #FFA72644', '0 0 0 12px #FFA72622', '0 0 0 0 #FFA72644'] }}
             transition={{ duration: 2.5, repeat: Infinity, repeatType: 'loop', ease: 'easeInOut' }}
-            className="bg-secondary hover:bg-orange-500 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform shadow-lg focus:outline-none"
+            className="bg-secondary hover:bg-orange-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition duration-300 ease-in-out transform shadow-lg focus:outline-none w-full sm:w-auto"
           >
             Commencer ma recherche
           </motion.button>

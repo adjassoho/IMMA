@@ -73,7 +73,7 @@ const WhatsNew: React.FC = () => {
     <section className="w-full py-20 px-2 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 relative flex flex-col items-center justify-center overflow-hidden">
       {/* Overlay de texture subtile */}
       <div className="absolute inset-0 pointer-events-none" style={{backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'40\' height=\'40\' fill=\'%23e5e7eb\'/%3E%3Ccircle cx=\'20\' cy=\'20\' r=\'1.5\' fill=\'%23d1d5db\'/%3E%3C/svg%3E")', opacity: 0.18}} />
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-14 text-center text-primary uppercase tracking-wide relative z-10">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-8 sm:mb-14 text-center text-primary uppercase tracking-wide relative z-10">
         Qu'est-ce qui change avec Nexo IMMO ?
       </h2>
       <div className="w-full max-w-6xl flex flex-col items-center px-2 sm:px-8 relative z-10">
@@ -102,7 +102,7 @@ const WhatsNew: React.FC = () => {
             <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#1A237E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </button>
         </div>
-        <div className="relative w-full" onWheel={handleWheel} style={{ minHeight: 380 }}>
+        <div className="relative w-full" onWheel={handleWheel} style={{ minHeight: 320 }}>
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={current}
@@ -110,9 +110,9 @@ const WhatsNew: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -80 }}
               transition={{ duration: 0.5 }}
-              className="absolute w-full"
+              className="absolute w-full px-0 sm:px-4"
             >
-              <div className="relative flex flex-col bg-white rounded-2xl shadow-lg p-10 border border-primary/10 min-h-[340px]">
+              <div className="relative flex flex-col bg-white rounded-2xl shadow-lg p-6 sm:p-10 border border-primary/10 min-h-[240px] sm:min-h-[340px]">
                 {/* Badge et icône */}
                 <div className="flex items-center mb-6">
                   <span className="px-5 py-1 rounded-full bg-primary/10 text-primary font-bold text-sm tracking-widest mr-4">
