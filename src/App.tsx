@@ -13,6 +13,7 @@ import Register from './components/Register';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import PropertySearch from './components/PropertySearch';
+import Dashboard from './components/Dashboard';
 
 // Section FAQ
 const faqData = [
@@ -392,89 +393,56 @@ function Pricing() {
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
-  // Gestion du routage simple
-  useEffect(() => {
-    const path = window.location.pathname;
-    if (path === '/login') {
-      setCurrentPage('login');
-    } else if (path === '/register') {
-      setCurrentPage('register');
-    } else if (path === '/terms') {
-      setCurrentPage('terms');
-    } else if (path === '/privacy') {
-      setCurrentPage('privacy');
-    } else if (path === '/search') {
-      setCurrentPage('search');
-    } else {
-      setCurrentPage('home');
+  const renderPage = () => {
+    switch (currentPage) {
+      case 'home':
+        return (
+          <>
+            <Hero />
+            <WhatsNew />
+            <HowItWorks />
+            <Services />
+            <About />
+            <Testimonials />
+            <FAQ />
+            <Contact />
+            <CTA />
+          </>
+        );
+      case 'login':
+        return <Login onBack={() => setCurrentPage('home')} />;
+      case 'register':
+        return <Register onBack={() => setCurrentPage('home')} />;
+      case 'terms':
+        return <TermsOfService onBack={() => setCurrentPage('home')} />;
+      case 'privacy':
+        return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+      case 'search':
+        return <PropertySearch />;
+      case 'dashboard':
+        return <Dashboard onBack={() => setCurrentPage('home')} />;
+      default:
+        return (
+          <>
+            <Hero />
+            <WhatsNew />
+            <HowItWorks />
+            <Services />
+            <About />
+            <Testimonials />
+            <FAQ />
+            <Contact />
+            <CTA />
+          </>
+        );
     }
-  }, []);
-
-  // Navigation programmatique
-  const navigate = (page: string) => {
-    setCurrentPage(page);
-    window.history.pushState({}, '', page === 'home' ? '/' : `/${page}`);
   };
 
-  // Écouter les changements d'URL
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      if (path === '/login') {
-        setCurrentPage('login');
-      } else if (path === '/register') {
-        setCurrentPage('register');
-      } else if (path === '/terms') {
-        setCurrentPage('terms');
-      } else if (path === '/privacy') {
-        setCurrentPage('privacy');
-      } else if (path === '/search') {
-        setCurrentPage('search');
-      } else {
-        setCurrentPage('home');
-      }
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Rendu conditionnel selon la page
-  if (currentPage === 'login') {
-    return <Login />;
-  }
-
-  if (currentPage === 'register') {
-    return <Register />;
-  }
-
-  if (currentPage === 'terms') {
-    return <TermsOfService />;
-  }
-
-  if (currentPage === 'privacy') {
-    return <PrivacyPolicy />;
-  }
-
-  if (currentPage === 'search') {
-    return <PropertySearch />;
-  }
-
-  // Page d'accueil par défaut
   return (
     <div className="bg-white min-h-screen">
-      <Navbar />
+      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="pt-16">
-        <Hero />
-        <About />
-        <HowItWorks />
-        <WhatsNew />
-        <Services />
-        <Pricing />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-        <CTA />
+        {renderPage()}
         <Footer />
       </main>
     </div>
