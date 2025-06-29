@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaUserSecret, FaDatabase, FaEye, FaLock } from 'react-icons/fa';
 
