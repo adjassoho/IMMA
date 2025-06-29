@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaShieldAlt, FaUserSecret, FaDatabase, FaEye, FaLock, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaShieldAlt, FaUserSecret, FaDatabase, FaEye, FaLock } from 'react-icons/fa';
 
 const PrivacyPolicy = () => {
   return (

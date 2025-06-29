@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaHome, 
-  FaHeart, 
-  FaEye, 
-  FaCalendarAlt, 
-  FaBell, 
-  FaUser, 
-  FaCog, 
-  FaSignOutAlt,
+import {
+  FaHome,
+  FaHeart,
+  FaEye,
+  FaCalendarAlt,
+  FaBell,
   FaSearch,
   FaMapMarkerAlt,
-  FaEuroSign,
   FaChartLine,
   FaCheckCircle,
   FaClock,
@@ -19,8 +15,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaWhatsapp,
-  FaArrowUp,
-  FaArrowDown,
   FaPlus,
   FaFilter,
   FaDownload,
