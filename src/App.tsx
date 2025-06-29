@@ -5,7 +5,7 @@ import About from './components/About';
 import Services from './components/Services';
 import HowItWorks from './components/HowItWorks';
 import WhatsNew from './components/WhatsNew';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaStar, FaFacebook, FaLinkedin, FaInstagram, FaCheckCircle, FaCrown, FaUserTie } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Login from './components/Login';
@@ -335,61 +335,6 @@ function Footer() {
   );
 }
 
-function Pricing() {
-  return (
-    <section className="w-full py-12 sm:py-24 px-2 sm:px-8 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 flex flex-col items-center justify-center overflow-hidden">
-      <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-8 sm:mb-14 text-center text-primary uppercase tracking-wide drop-shadow-lg">
-        Plans d'abonnement
-      </h2>
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 relative z-10">
-        {/* Carte Essentiel */}
-        <div className="bg-white/80 rounded-2xl shadow-xl p-6 sm:p-10 flex flex-col items-center border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 backdrop-blur-md">
-          <div className="text-lg sm:text-xl font-bold text-primary mb-2 uppercase tracking-wide flex items-center gap-2"><FaCheckCircle className="text-secondary" />Essentiel</div>
-          <div className="text-3xl sm:text-4xl font-extrabold text-primary mb-4">29€<span className="text-base sm:text-lg font-medium text-primary/60">/mois</span></div>
-          <ul className="text-primary/80 text-sm sm:text-base mb-8 space-y-2 text-center">
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Recherche automatisée IA</li>
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Tableau de bord personnel</li>
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Support email</li>
-          </ul>
-          <button className="bg-secondary hover:bg-orange-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition duration-300 ease-in-out transform shadow-lg focus:outline-none hover:scale-105 w-full sm:w-auto">
-            Choisir Essentiel
-          </button>
-        </div>
-        {/* Carte Premium */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12 flex flex-col items-center border-2 border-secondary scale-105 z-20 relative hover:-translate-y-4 transition-all duration-300">
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gradient-to-r from-secondary via-orange-400 to-secondary text-white px-6 sm:px-8 py-2 rounded-full font-bold text-sm sm:text-base shadow-lg uppercase tracking-widest flex items-center gap-2 animate-pulse"><FaCrown className="text-yellow-300" />Le plus populaire</div>
-          <div className="text-lg sm:text-xl font-bold text-primary mb-2 uppercase tracking-wide flex items-center gap-2"><FaCrown className="text-secondary" />Premium</div>
-          <div className="text-3xl sm:text-4xl font-extrabold text-primary mb-4">59€<span className="text-base sm:text-lg font-medium text-primary/60">/mois</span></div>
-          <ul className="text-primary/80 text-sm sm:text-base mb-8 space-y-2 text-center">
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Toutes les fonctionnalités Essentiel</li>
-            <li className="flex items-center gap-2 justify-center"><FaUserTie className="text-secondary" />Accompagnement humain dédié</li>
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Organisation des visites</li>
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Support prioritaire</li>
-          </ul>
-          <button className="bg-secondary hover:bg-orange-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition duration-300 ease-in-out transform shadow-lg focus:outline-none hover:scale-110 animate-bounce-slow w-full sm:w-auto">
-            Choisir Premium
-          </button>
-        </div>
-        {/* Carte Pro */}
-        <div className="bg-white/80 rounded-2xl shadow-xl p-6 sm:p-10 flex flex-col items-center border border-primary/10 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 backdrop-blur-md">
-          <div className="text-lg sm:text-xl font-bold text-primary mb-2 uppercase tracking-wide flex items-center gap-2"><FaUserTie className="text-secondary" />Pro</div>
-          <div className="text-3xl sm:text-4xl font-extrabold text-primary mb-4">99€<span className="text-base sm:text-lg font-medium text-primary/60">/mois</span></div>
-          <ul className="text-primary/80 text-sm sm:text-base mb-8 space-y-2 text-center">
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Toutes les fonctionnalités Premium</li>
-            <li className="flex items-center gap-2 justify-center"><FaUserTie className="text-secondary" />Gestion locative complète</li>
-            <li className="flex items-center gap-2 justify-center"><FaCheckCircle className="text-secondary" />Conseiller dédié 7j/7</li>
-          </ul>
-          <button className="bg-secondary hover:bg-orange-500 text-white font-bold py-3 px-6 sm:px-8 rounded-full text-base sm:text-lg transition duration-300 ease-in-out transform shadow-lg focus:outline-none hover:scale-105 w-full sm:w-auto">
-            Choisir Pro
-          </button>
-        </div>
-      </div>
-      {/* Effet de profondeur */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95vw] h-[40vh] sm:w-[90vw] sm:h-[60vh] bg-white/40 rounded-3xl blur-2xl z-0" />
-    </section>
-  );
-}
-
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
@@ -410,17 +355,17 @@ function App() {
           </>
         );
       case 'login':
-        return <Login onBack={() => setCurrentPage('home')} />;
+        return <Login />;
       case 'register':
-        return <Register onBack={() => setCurrentPage('home')} />;
+        return <Register />;
       case 'terms':
-        return <TermsOfService onBack={() => setCurrentPage('home')} />;
+        return <TermsOfService />;
       case 'privacy':
-        return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
+        return <PrivacyPolicy />;
       case 'search':
         return <PropertySearch />;
       case 'dashboard':
-        return <Dashboard onBack={() => setCurrentPage('home')} />;
+        return <Dashboard />;
       default:
         return (
           <>
