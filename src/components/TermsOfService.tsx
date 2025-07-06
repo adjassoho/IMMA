@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaUserCheck, FaHandshake, FaExclamationTriangle, FaCheckCircle } from 'react-icons/fa';
 
-const TermsOfService = () => {
+interface TermsOfServiceProps {
+  onBack?: () => void;
+}
+
+const TermsOfService: React.FC<TermsOfServiceProps> = ({ onBack }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
       <div className="max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
@@ -208,7 +212,7 @@ const TermsOfService = () => {
             {/* Bouton retour */}
             <div className="text-center mt-12">
               <button
-                onClick={() => window.history.back()}
+                onClick={onBack || (() => window.history.back())}
                 className="bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Retour

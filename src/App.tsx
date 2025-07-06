@@ -6,7 +6,7 @@ import Services from './components/Services';
 import HowItWorks from './components/HowItWorks';
 import WhatsNew from './components/WhatsNew';
 import React, { useState } from 'react';
-import { FaStar, FaFacebook, FaLinkedin, FaInstagram, FaCheckCircle, FaCrown, FaUserTie } from 'react-icons/fa';
+import { FaStar, FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -359,13 +359,13 @@ function App() {
       case 'register':
         return <Register />;
       case 'terms':
-        return <TermsOfService />;
+        return <TermsOfService onBack={() => setCurrentPage('home')} />;
       case 'privacy':
-        return <PrivacyPolicy />;
+        return <PrivacyPolicy onBack={() => setCurrentPage('home')} />;
       case 'search':
         return <PropertySearch />;
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard onBack={() => setCurrentPage('home')} />;
       default:
         return (
           <>
@@ -385,7 +385,7 @@ function App() {
 
   return (
     <div className="bg-white min-h-screen">
-      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <Navbar setCurrentPage={setCurrentPage} />
       <main className="pt-16">
         {renderPage()}
         <Footer />

@@ -3,11 +3,10 @@ import { FaBell, FaUserCircle, FaChevronDown, FaBars, FaTimes, FaTachometerAlt }
 import logo from '../assets/react.svg'; // Remplacer par le vrai logo si disponible
 
 interface NavbarProps {
-  currentPage: string;
   setCurrentPage: (page: string) => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
+const Navbar: React.FC<NavbarProps> = ({ setCurrentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
